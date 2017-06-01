@@ -1,0 +1,24 @@
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+
+
+{% include 'css.html' %}
+
+<div class="container">   
+      <div class="masthead">
+        <h3 class="text-muted">Rental Income Information System</h3>
+       
+       {% include 'navbar.html' %}
+
+{% block title %} <h1 class="container">SignUp</h1> {% endblock %}
+
+{% block headline %}<h1>Register for Rental Information System</h1>{% endblock %}
+
+{% block content %}
+<div class="col-md-4 col-sm-offset-2">
+    {% crispy form %}
+    </div>
+{% endblock %}
+
+
+{% include 'javascript.html' %}

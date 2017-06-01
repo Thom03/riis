@@ -1,0 +1,49 @@
+{% load crispy_forms_tags %}
+{% include 'css.html' %}
+ {% include 'navbar.html' %}
+
+
+
+{% if title %}
+<div class="row">
+<div class="col-sm-12">
+<div class="col-md-4 col-sm-offset-2">
+<h1>{{ title }}</h1>
+	
+</div>	
+</div>
+{% endif %}
+<div class="container">
+<div class="row">
+  <div class="col-md-4 col-sm-offset-2">
+
+		<form method='POST' action=''>{% csrf_token %}
+
+			{{ form |crispy }}
+
+		<input class='btn btn-success' type="submit" value="Submit">
+	
+		</form>
+
+</div>
+</div>
+</div>		
+
+
+
+
+
+
+
+
+
+
+
+
+ <footer class="footer">
+
+        <p>&copy; 2016 Makusanya, Inc.</p>
+      </footer>
+
+
+{% include 'javascript.html' %}

@@ -1,0 +1,101 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <title>Rental Income Information System</title>
+    
+
+{% include 'css.html' %}
+   
+
+  
+  </head>
+
+  <body>
+
+    <div class="container">   
+      <div class="masthead">
+        <h3 class="text-muted">Rental Income Information System</h3>
+       
+       {% include 'navbar.html' %}
+        
+          
+
+
+      </div>
+
+      {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+      <!-- Jumbotron -->
+      {% if request.user.is_authenticated %}
+      <div class="jumbotron">
+        <h1>Welcome , {{ user.get_username }}.</h1>
+        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
+        <p><a class="btn btn-lg btn-success" href="{% url 'logout' %}" role="button">Log Out</a></p>
+        </div>
+        {% else %}
+        <div class="jumbotron">
+        <h1>Welcome ,Stranger.</h1>
+        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
+         
+        <span><p><a class="btn btn-lg btn-success" href="{% url 'login' %}" role="button">Log In</a></p><p><a class="btn btn-lg btn-success" href="{% url 'signup' %}" role="button">Register</a></p></span>
+
+      </div>
+      {% endif %}
+      
+      
+
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-lg-4">
+          <h2>Downloads</h2>
+           <img class="img-circle" src="{% static "img/down.jpeg" %}" alt="Generic placeholder image" width="140" height="140">
+          
+          <p class="para">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-success" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-lg-4">
+          <h2>Portal</h2>
+          <img class="img-circle" src="{% static "img/im2.png" %}" alt="Generic placeholder image" width="140" height="140">
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-success" href="#" role="button">View details &raquo;</a></p>
+       </div>
+        <div class="col-lg-4">
+          <h2>Contact Us</h2>
+          <img class="img-circle" src="{% static "img/contact.jpeg" %}" alt="Generic placeholder image" width="140" height="140">
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
+          <p><a class="btn btn-success" href="#" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
+
+      <!-- Site footer -->
+      
+      <footer class="footer">
+
+        <p>&copy; 2016 Makusanya, Inc.</p>
+      </footer>
+
+
+    </div> <!-- /container -->
+
+{% include 'javascript.html' %}
+ 
+    
+  </body>
+</html>

@@ -1,0 +1,35 @@
+.jumbotron{
+	background-image: url('../img/sironga.JPG');
+}
+
+jumbotron .h1, .jumbotron h1{
+	color: white;
+}
+
+.jumbotron p{
+	color: white;
+}
+
+.btn-primary{
+	background-color: #5CB85C;
+	border-color: #4CAE4C;
+}
+.row{
+	text-align:center;
+}
+
+.para{
+	text-align:center;
+
+}
+
+.nav-justified > li > a {
+	color: #5CB85C;
+	}
+
+
+#b{
+	color: #5CB85C;
+	text-align:center;
+
+}	
